@@ -36,9 +36,9 @@ reading the files :  'X_test.txt', 'X_train.txt','Y_test.txt','Y_train.tst','act
 The directory includes the following files:
 =========================================
 
-- 'README.md'
+-'README.md'
+ 
+-'CodeBook.md' :Shows information about the variables used on the final tidy data set
 
-- 'CodeBook.md' :Shows information about the variables used on the final tidy data set
-
-- 'run_analysis.R': script R processing the source files to produce the final tidy data 
+-'run_analysis.R': script R processing the source files to produce the final tidy data 
 

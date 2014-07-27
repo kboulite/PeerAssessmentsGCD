@@ -4,54 +4,24 @@ PeerAssessmentsGCD
 Peer Assessments /Getting and Cleaning Data Course Project
  
 
+this script reads  source data 'UCI HAR Dataset' and produce a tidy data set with 68 variables :
+Subject , Activity and 66 measurements
+this processing is done in 5 steps :
 
-Merges the training and the test sets to create one data set  
-reading the files :  'X_test.txt', 'file X_train.txt','subject_test.txt','activity_test.txt'
+
+1- Merges the training and the test sets to create one data set  
+reading the files :  'X_test.txt', 'file X_train.txt','subject_test.txt','activity_test.txt','measurements'subject_train.txt",header=F)
 
 
-data_test<-cbind(subject_test,data_test)
 
-## read  train activity label in activity_train from y_train.txt  
-activity_train<-read.table("UCI HAR Dataset\\train\\y_train.txt",header=F)
-## set the colname for activities
-names(activity_train)<-'Activity'
-## read subject train in subject_train from subject_train.txt	
-subject_train<-read.table("UCI HAR Dataset\\train\\subject_train.txt",header=F)
 
-## set the colname for subject
-names(subject_train)<-'Subject'
 
-## merge the 3 dataSet to data_train
-data_train<-cbind(subject_train,data_train)
-data_train<-cbind(activity_train,data_train)
+ read variables names from the file 'UCI HAR Dataset\\features.txt' then 
+ set appropriately labels the data set with descriptive variable names                     
 
-## merge data_test and data_train  in  full_data
-full_data<-rbind(data_train,data_test)
 
-####################################################################
-############  END QUESTION 1 #######################################
-####################################################################
-
-################################################################################################
-######################### QUESTION 4 ###########################################################
-#        Appropriately labels the data set with descriptive variable names                     #
-################################################################################################
-## read  column names from features.txt
-features<-read.table("UCI HAR Dataset\\features.txt",header=F)
-## Add Activities and subject column name
-features[1]<-features[1]+2
-nr<-data.frame(V1=2,V2="Subject")
-features<-rbind(nr,features) 
-nr<-data.frame(V1=1,V2="Activity")
-features<-rbind(nr,features)
-## set column names of Data set  
-names(full_data)<-t(features$V2)
-################################################################################################
-############################ END QUESTION 4 ####################################################
-################################################################################################
-
- Extracts only the measurements on the mean and standard deviation for each measurement#########
- we keep also Activty and Subject #############################################################
+ Extracts only the measurements on the mean and standard deviation for each measurement
+ we keep also Activty and Subject  (subset with columns that contain 'Mena()' and 'std()' 
 
 
  Uses descriptive activity names to name the activities in the data set

@@ -4,7 +4,7 @@ PeerAssessmentsGCD
 Peer Assessments /Getting and Cleaning Data Course Project
  
 
-this script reads  source data 'UCI HAR Dataset' and produce a tidy data set with 68 variables :
+This script reads  source data 'UCI HAR Dataset' and produce a tidy data set with 68 variables :
 Subject , Activity and 66 measurements
 this processing is done in 5 steps :
 

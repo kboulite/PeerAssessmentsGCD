@@ -5,26 +5,9 @@ Peer Assessments /Getting and Cleaning Data Course Project
  
 
 
-####################################################################
-############   QUESTION 1 ##########################################
-#    Merges the training and the test sets to create one data set  #
-####################################################################
-read Test data in variable data_test from the file X_test  
-read Test data in variable data_train from the file X_train  
+Merges the training and the test sets to create one data set  
+reading the files :  'X_test.txt', 'file X_train.txt','subject_test.txt','activity_test.txt'
 
-read  Test activity label  from y_test.txt  
-
-set the colname for activities
-
-names(activity_test)<-'Activity'
-## read subject test in sactivitiesubject_Test from subject_test.txt	
-subject_test<-read.table("UCI HAR Dataset\\test\\subject_test.txt",header=F)
-
-## set the colname for subject
-names(subject_test)<-'Subject'
-
-## merge the 3 dataSet to data_test
-data_test<-cbind(activity_test,data_test)
 
 data_test<-cbind(subject_test,data_test)
 
@@ -67,31 +50,15 @@ names(full_data)<-t(features$V2)
 ############################ END QUESTION 4 ####################################################
 ################################################################################################
 
-################################################################################################
-############################## QUESTION 2 ######################################################
-#Extracts only the measurements on the mean and standard deviation for each measurement#########
-# we keep also Activty and Subject #############################################################
-################################################################################################
-##extract only columns for std and mean   of course we keep Subject and Activity
-std_mean<-features[which(str_detect(features$V2, 'Subject|Activity|(((M|m)ean|std)\\(\\))')),]
-std_mean_colIndex<-std_mean[1]
-## convert to list
-std_mean_colIndex<-unlist(std_mean_colIndex)
-##Extracts only the measurements on the mean and standard deviation for each measurement. 
-meanStd_data<-subset(full_data,select=std_mean_colIndex)
-###############################################################################################
-############################ END QUESTION 2 ###################################################
-###############################################################################################
-
-###############################################################################################
-######################## QUESTION 3    ########################################################
-###Uses descriptive activity names to name the activities in the data set######################
+ Extracts only the measurements on the mean and standard deviation for each measurement#########
+ we keep also Activty and Subject #############################################################
 
 
-read labels from  "UCI HAR Dataset\\activity_labels.txt"
+ Uses descriptive activity names to name the activities in the data set
+ read labels from  "UCI HAR Dataset\\activity_labels.txt"
  repalce the activities code by its labels : WALKING; WALKING_UPSTAIRS; WALKING_DOWNSTAIRS;SITTING; STANDING LAYING;
 
-
+ Create a  tidy data set with the average of each variable for each activity and each subject. 
  firslty it puts data set on long format
  than by calculying  the mean it puts the data set on wide format
  add a prefix 'Mean_' at variables labels Except : 'Activity' and 'Subject'

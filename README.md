@@ -18,7 +18,7 @@ reading the files :  'X_test.txt', 'X_train.txt','Y_test.txt','Y_train.tst','act
 
 
 3- Extracts only the measurements on the mean and standard deviation for each measurement
- we keep also Activty and Subject  (subset with columns that contain 'Mena()' and 'std()' 
+ we keep also Activty and Subject  (subset with columns that contain 'Mean()' and 'std()' 
 
 
 4- Uses descriptive activity names to name the activities in the data set

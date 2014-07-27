@@ -13,22 +13,19 @@ this processing is done in 5 steps :
 reading the files :  'X_test.txt', 'file X_train.txt','subject_test.txt','activity_test.txt','measurements'subject_train.txt",header=F)
 
 
-
-
-
- read variables names from the file 'UCI HAR Dataset\\features.txt' then 
+2- reads variables names from the file 'UCI HAR Dataset\\features.txt' then 
  set appropriately labels the data set with descriptive variable names                     
 
 
- Extracts only the measurements on the mean and standard deviation for each measurement
+3- Extracts only the measurements on the mean and standard deviation for each measurement
  we keep also Activty and Subject  (subset with columns that contain 'Mena()' and 'std()' 
 
 
- Uses descriptive activity names to name the activities in the data set
+4- Uses descriptive activity names to name the activities in the data set
  read labels from  "UCI HAR Dataset\\activity_labels.txt"
  repalce the activities code by its labels : WALKING; WALKING_UPSTAIRS; WALKING_DOWNSTAIRS;SITTING; STANDING LAYING;
 
- Create a  tidy data set with the average of each variable for each activity and each subject. 
+5- Create a  tidy data set with the average of each variable for each activity and each subject. 
  firslty it puts data set on long format
  than by calculying  the mean it puts the data set on wide format
  add a prefix 'Mean_' at variables labels Except : 'Activity' and 'Subject'

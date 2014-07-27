@@ -5,7 +5,7 @@ the others values are  Mean by subject and  by activity for each variable
 mean(): Mean value
 std(): Standard deviation
 '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions
-values are in   [-1,1]
+values are normalized and bounded within [-1,1]
 
 Mean__tBodyAcc-mean()-X
 Mean__tBodyAcc-mean()-Y

@@ -103,12 +103,18 @@ for (i in 1:6) meanStd_data$Activity[meanStd_data$Activity==activity_labels[i,]$
 ################################################################################################
  
 library(reshape2)
+# put data set in long format
 melt_full_data<-melt(meanStd_data,id=c("Subject","Activity"))
+
+#calculate the mean for each variables and put data set in wide format
 tidy_full_data<- dcast(melt_full_data, Subject + Activity ~ variable, mean)
 
+# add prefix to column names
 colnames(tidy_full_data) <- paste("Mean_", colnames(tidy_full_data), sep = "_")
 colnames(tidy_full_data)[1]<-'Subject'
 colnames(tidy_full_data)[2]<-'Activity'
+
+#write data set in file "tidy_data.txt"
 write.table(tidy_full_data, file = "tidy_data.txt", sep = "\t",
             qmethod = "double",row.names = F)
 

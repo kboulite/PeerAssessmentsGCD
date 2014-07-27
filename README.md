@@ -13,7 +13,7 @@ this processing is done in 5 steps :
 reading the files :  'X_test.txt', 'X_train.txt','Y_test.txt','Y_train.tst','activity_train.txt','activity_test.txt','subject_train.txt','subject_test.txt',
 
 
-2- reads variables names from the file 'UCI HAR Dataset\\features.txt' then 
+2- Reads variables names from the file 'UCI HAR Dataset\\features.txt' then 
  set appropriately labels the data set with descriptive variable names                     
 
 

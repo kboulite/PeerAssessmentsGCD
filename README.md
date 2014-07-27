@@ -10,7 +10,7 @@ this processing is done in 5 steps :
 
 
 1- Merges the training and the test sets to create one data set  
-reading the files :  'X_test.txt', 'file X_train.txt','subject_test.txt','activity_test.txt','measurements'subject_train.txt",header=F)
+reading the files :  'X_test.txt', 'X_train.txt','subject_test.txt','Y_test.txt','Y_train.tst','activity_test.txt','subject_te','subject_train.txt'
 
 
 2- reads variables names from the file 'UCI HAR Dataset\\features.txt' then 

@@ -1,6 +1,5 @@
 PeerAssessmentsGCD
 ==================
-
 Peer Assessments /Getting and Cleaning Data Course Project
  
 
@@ -30,7 +29,6 @@ reading the files :  'X_test.txt', 'X_train.txt','Y_test.txt','Y_train.tst','act
  than by calculying  the mean it puts the data set on wide format
  add a prefix 'Mean_' at variables labels Except : 'Activity' and 'Subject'
  write the data set in a file 'tidy_data.txt'
-
 
 
 The directory includes the following files:
